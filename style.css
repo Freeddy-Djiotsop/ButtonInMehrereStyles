@@ -1,0 +1,251 @@
+body{
+    background: #262626;
+}
+
+.container{
+    width: 900px;
+    padding: 7% 50px;
+    margin: 0 auto;
+}
+
+a{
+    width: 180px;
+    display: inline-block;/*content in spalte platzieren*/
+    margin: 5% 20px;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+
+a:nth-child(1){
+    background: #031321;
+}
+
+a:nth-child(2){
+    background: orange;
+    border-radius: 10px;
+}
+
+a:nth-child(3){
+    background: purple;
+    border: 2px solid #fff;
+}
+
+a:nth-child(4){
+    background: blue;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+a:nth-child(5){
+    background: green;
+    border: 2px dotted yellow
+}
+
+a:nth-child(6){
+    background: green;
+    border: 2px dashed yellow;
+}
+
+a:nth-child(7){
+    background: yellow;
+    border-radius: 30px 0 30px 0;
+    color: #000;
+}
+
+a:nth-child(8){
+    background: orangered;
+    border-radius: 0 30px 0 30px;
+}
+
+a:nth-child(8):hover{
+    background: orange;
+}
+
+a:nth-child(9){
+    background: green;
+    color: #f2f2f2;
+}
+
+a:nth-child(9)::before{
+    content: "";
+    width: calc(100% - 16px);
+    height: calc(100% - 12px);
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    border: 2px dashed #fff;
+}
+
+a:nth-child(10){
+    background: #424242;
+}
+
+a:nth-child(10)::before{
+    content: "";
+    width: calc(100%);
+    height: calc(100% - 14px);
+    position: absolute;
+    left: 0;
+    top: 5px;
+    border-top: 2px dashed yellow;
+    border-bottom: 2px dashed yellow;
+}
+
+a:nth-child(11){
+    background: #ff00e4;
+    border-radius: 30px;
+    text-align: right;
+    width: 160px;
+    padding-right: 20px; 
+}
+
+a:nth-child(11)::before{/*make this before the button 11*/
+    content: "";
+    width: calc(40px);/*or 40px*/
+    height: calc(40px);
+    position: absolute;/*position absolute is very important hier*/
+    left: 10px;
+    top: 10px;
+    border-radius: 20px;
+    background: orange;
+}
+
+a:nth-child(12){
+    border-radius: 30px;
+    text-align: right;
+    width: 160px;
+    padding-right: 20px;
+    border: 4px solid #fff;
+}
+
+a:nth-child(12)::before{
+    content: "";
+    width: calc(40px);
+    height: calc(40px);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 20px;
+    background: blue;
+}
+
+a:nth-child(13){
+    background: linear-gradient(to right, #0c1700, #81f802, #0c1700);/*Color changing from left to right*/
+}
+
+a:nth-child(14){
+    background: linear-gradient(-45deg, blue, red);
+}
+
+a:nth-child(15){
+    box-shadow: inset 0 0 30px blue;
+    background: lime;
+}
+
+a:nth-child(16){
+    box-shadow: 0 0 30px skyblue;
+}
+
+/*body .container{
+    display: none;
+}*/
+
+/*Voici ou comence le code du NEON BUTTON*/
+
+.body{/*Class name for the NEON Button*/
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #031321;
+    font-family: consolas;
+}
+
+.a{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2196f3;
+    text-transform: uppercase;/*gros Buchstaben*/
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;/*Police*/
+    overflow: hidden;/*if content overflows the box, so the overflowing element or text will be invisible it*/
+    transition: 0.2s;/*how fast transition will be done*/
+}
+
+.a:hover{
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+    transition-delay: 1s;/*Wait 1s and than do the transition*/
+}
+
+.a span{
+    display: block;/*Span mehrere Zeilen aufgespalten, also nicht in Spalten, sondern in Reihen*/
+    position: absolute;
+}
+
+.a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;/*To cover all the button width*/
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2196f3);/*linear-grandient help to move the transition at the right place, 90dreg for the top for the first span, 270deg for the right for the third span etc... */
+}
+
+.a:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+.a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+.a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+.a:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.a span:nth-child(4){
+    bottom: -100%;
+    left:  0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+.a:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
